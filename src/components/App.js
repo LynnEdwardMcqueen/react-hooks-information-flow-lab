@@ -1,7 +1,8 @@
-import React, { useImperativeHandle, useState } from "react";
+import React, { useState } from "react";
 import ShoppingList from "./ShoppingList";
-import itemData from "../data/items";
+import items from "../data/items";
 import Header from "./Header.js"
+
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -12,8 +13,9 @@ function App() {
 
   return (
     <div className={"App " + (isDarkMode ? "dark" : "light")}>
-      <Header darkMode = {isDarkMode} onDarkModeClick={handleDarkModeClick} /> 
-      <ShoppingList items={itemData} />
+      <Header darkMode = {isDarkMode} onDarkModeClick={handleDarkModeClick} />
+      
+      <ShoppingList items={items}  />
     </div>
   );
 }
